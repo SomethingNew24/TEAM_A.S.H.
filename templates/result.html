@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+</head>
+<body>
+    <h1>Analysis Results</h1>
+    <div>
+        <!-- Display Sentiment Analysis Results Here -->
+        {% for result in results %}
+            <div>
+                <p><strong>Comment:</strong> {{ result.Comment }}</p>
+                <p><strong>Stars:</strong> {{ result.Stars }}</p>
+                <p><strong>Sentiment:</strong> {{ result.Sentiment_Analysis }}</p>
+                <p><strong>User Profile:</strong> <a href="{{ result['User Profile Link'] }}" target="_blank">Profile Link</a></p>
+            </div>
+            <hr>
+        {% endfor %}
+    </div>
+
+    <!-- Display Sentiment Distribution Bar Chart -->
+    <img src="{{ url_for('static', filename='sentiment_distribution.png') }}" alt="Sentiment Distribution">
+
+    <!-- Display Average Rating by Sentiment Bar Chart -->
+    <img src="{{ url_for('static', filename='average_rating_by_sentiment.png') }}" alt="Average Rating by Sentiment">
+
+    <!-- Display Positive Word Cloud -->
+    <img src="{{ url_for('static', filename='positive_wordcloud.png') }}" alt="Positive Word Cloud">
+
+    <!-- Display Negative Word Cloud -->
+    <img src="{{ url_for('static', filename='negative_wordcloud.png') }}" alt="Negative Word Cloud">
+</body>
+</html>

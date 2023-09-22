@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MouthShut Scraper</title>
+</head>
+<body>
+    <h1>MouthShut Scraper</h1>
+    <form action="/" method="POST">
+        <label for="username">MouthShut Email:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <label for="urls">Enter URLs to Scrape (one per line):</label><br>
+        <textarea id="urls" name="urls" rows="5" required></textarea><br><br>
+        <!-- Button to add more URL input fields -->
+        <button type="button" id="add-url">Add URL</button>
+        <div id="url-inputs">
+            <!-- Initial URL input field -->
+            <input type="text" name="url" required><br>
+        </div>
+        <input type="submit" value="Scrape and Analyze">
+    </form>
+
+    <!-- JavaScript to add URL input fields -->
+    <script>
+        // Function to add a new URL input field
+        function addURLInput() {
+            const urlInputs = document.getElementById("url-inputs");
+            const newInput = document.createElement("input");
+            newInput.type = "text";
+            newInput.name = "url";
+            newInput.required = true;
+            urlInputs.appendChild(newInput);
+        }
+
+        // Add URL input field when the "Add URL" button is clicked
+        document.getElementById("add-url").addEventListener("click", addURLInput);
+    </script>
+</body>
+</html>

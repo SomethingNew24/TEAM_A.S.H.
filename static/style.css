@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+form {
+    margin: 20px auto;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+#result {
+    margin: 20px auto;
+    width: 80%;
+}
